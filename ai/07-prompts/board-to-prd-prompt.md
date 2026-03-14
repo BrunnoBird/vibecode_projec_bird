@@ -28,3 +28,10 @@ Regras:
 - nao inventar requisito fora da historia do board
 - marcar lacunas em `Duvidas abertas`
 - usar linguagem clara e verificavel
+
+Quando a historia for BUG, incluir tambem no PRB/PRD:
+- comportamento esperado vs comportamento atual
+- passos de reproducao
+- ambiente/versao impactada
+- impacto ao usuario/negocio
+- evidencias disponiveis (log, print, video, stacktrace)

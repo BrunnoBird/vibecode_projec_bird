@@ -103,3 +103,68 @@ Spec: ai/03-specs/_work/<feature>-spec.md
 3. `ai/09-evals/_runs/`: registrar validacao final de Tester.
 4. `ai/03-specs/_work/` e `ai/04-tasks/_work/`: artefatos locais da feature em execucao.
 5. `ai/08-handoffs/*.md` e `ai/09-evals/*.md`: templates oficiais versionados.
+
+---
+
+## Cenario exemplificativo: historia de BUG
+
+Historia no board (exemplo):
+- Titulo: `BUG - App fecha ao abrir Profile apos logout`
+- Contexto: usuarios reportam crash apos logout/login rapido
+- Problema: ao tocar em `Profile`, app fecha
+- Resultado esperado: `Profile` deve abrir sem crash
+- Restricoes: corrigir sem alterar fluxo de autenticacao
+- Dependencias conhecidas: modulo `feature:profile` + navegacao no `app`
+
+### Prompt para gerar PRB/PRD de BUG
+
+```md
+Atue como apoio de Product + Tech Writing.
+
+Use como base:
+- ai/07-prompts/board-to-prd-prompt.md
+
+Historia do Board (BUG):
+- Titulo: BUG - App fecha ao abrir Profile apos logout
+- Contexto: crash apos logout/login rapido
+- Problema: tela Profile fecha o app
+- Resultado esperado: Profile abre normalmente
+- Restricoes: nao alterar fluxo de autenticacao
+- Dependencias conhecidas: feature:profile, app navigation
+- Evidencias: stacktrace do Crashlytics + video curto de reproducao
+
+Saida:
+- criar ai/01-product/_work/bug-profile-crash-prd.md
+- incluir comportamento esperado vs atual
+- incluir passos de reproducao e ambiente impactado
+- nao inventar requisitos fora da historia
+```
+
+### Prompt para iniciar PLAN da PRB/PRD de BUG
+
+```md
+Atue como Architect Agent em modo PLAN.
+
+Leia:
+- ai/AGENT_START.md
+- ai/07-prompts/plan-architect-prompt.md
+- ai/01-product/_work/bug-profile-crash-prd.md
+
+Gere:
+- ai/03-specs/_work/bug-profile-crash-spec.md
+- ai/04-tasks/_work/task-*.md
+
+Regra para BUG:
+- incluir hipotese de causa-raiz
+- propor correcao minima (sem expandir escopo)
+- definir validacao de regressao
+```
+
+### Sequencia dos Agents para BUG (sem ambiguidade)
+
+1. Gerar PRB/PRD com `ai/07-prompts/board-to-prd-prompt.md`.
+2. Rodar PLAN com `ai/07-prompts/plan-architect-prompt.md`.
+3. Rodar EXECUTION com `ai/07-prompts/execution-coder-prompt.md`.
+4. Rodar REVIEW com `ai/07-prompts/review-reviewer-prompt.md`.
+5. Rodar TEST com `ai/07-prompts/test-tester-prompt.md`.
+6. Humano decide aceite com base no eval em `_runs`.
