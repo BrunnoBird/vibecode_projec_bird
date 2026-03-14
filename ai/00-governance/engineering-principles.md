@@ -10,9 +10,13 @@
 - Todo código novo deve ser testável.
 - Evitar dependências desnecessárias.
 - Priorizar legibilidade e manutenção.
+- Não criar abstrações desnecessárias
+- Não expandir escopo da task
+- Toda feature deve ser compatível com modularização
+- Toda lógica crítica deve ser testável
 
 ## Princípios específicos do projeto
-- Arquitetura MVI para apresentação.
+- Sempre seguir arquitetura MVI
 - ViewModel como orquestrador de intents, state e effects.
 - Material Design 3 como base de UI.
 - Compose como tecnologia principal de interface.

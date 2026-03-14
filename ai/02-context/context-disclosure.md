@@ -1,14 +1,28 @@
 # Context Disclosure
 
-## Como a IA deve operar neste projeto
-- Ler PRD, contexto, spec e task antes de codar.
-- Não inventar requisitos não descritos.
-- Implementar uma task por vez.
-- Priorizar o menor design que atenda bem o bootstrap.
-- Sempre informar arquivos alterados, decisões e riscos.
+## Plataforma
+- Android
 
-## O que a IA deve evitar
-- Criar arquitetura enterprise sem necessidade
-- Adicionar bibliotecas por preferência pessoal
-- Refatorar fora do escopo
-- Misturar regra de negócio com UI
+## Linguagem
+- Kotlin
+
+## UI
+- Jetpack Compose
+- Material Design 3
+
+## Arquitetura
+- MVI
+
+## Estado
+- UIState imutável
+- Intent para eventos
+- Effect para eventos únicos
+
+## Navegação
+- Navigation Compose
+
+## Estrutura
+- projeto modular
+
+## Testes
+- testes unitários obrigatórios para lógica crítica

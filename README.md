@@ -1,55 +1,47 @@
-# Android Kotlin Compose SDD + Codex Starter
+﻿# Android Kotlin Compose SSD + Codex Starter
 
-Este starter kit foi criado para iniciar um projeto Android com:
+Este starter kit inicia um projeto Android com:
 
 - Kotlin
 - Jetpack Compose
 - Material Design 3
 - Arquitetura MVI
 - ViewModel
-- Testes unitários
-- Arquitetura modular
-- Fluxo SDD (Specification-Driven Development)
-- Uso de agentes e skills com Codex
+- Testes unitarios
+- Modularizacao
+- Fluxo SSD (Specification-Driven Development)
+- Agentes e skills com Codex
 
-## Objetivo inicial
+## Objetivo
 
-A primeira entrega deste projeto é **montar toda a estrutura base do projeto** para permitir evolução segura das próximas features.
+Manter um fluxo SSD padronizado com base em contratos de agentes, prompts reutilizaveis e skills.
 
-## Fluxo sugerido
+## Fluxo SSD adotado
 
-1. Leia `ai/00-governance/*`
-2. Leia `ai/02-context/*`
-3. Leia o PRD em `ai/01-product/prd-bootstrap-project.md`
-4. Leia a spec em `ai/03-specs/technical-spec-bootstrap-project.md`
-5. Execute as tasks em `ai/04-tasks/`
-6. Use os prompts prontos em `ai/07-prompts/`
+`Board -> PRB/PRD -> PLAN -> Spec -> Tasks -> Coder -> Reviewer -> Tester -> Aceite`
 
-## Ordem recomendada para o Codex
+## Documentacao IA
 
-1. `task-001-bootstrap-gradle-setup.md`
-2. `task-002-create-modules.md`
-3. `task-003-core-designsystem-and-theme.md`
-4. `task-004-core-architecture-mvi.md`
-5. `task-005-app-navigation-and-home-shell.md`
-6. `task-006-unit-test-baseline.md`
+Guia principal em partes:
+- `DOCS/IA_GUIDE_STUDY/README.md`
 
-## Módulos alvo da estrutura inicial
+## Ordem sugerida de uso
 
-- `app`
-- `core:designsystem`
-- `core:common`
-- `core:ui`
-- `core:testing`
-- `core:navigation`
-- `feature:home`
+1. Leia `ai/AGENT_START.md`
+2. Leia `ai/00-governance/*`
+3. Leia `ai/02-context/*`
+4. Gere PRB/PRD local em `ai/01-product/_work/` (nao versionado)
+5. Gere spec local em `ai/03-specs/_work/` (nao versionado)
+6. Gere tasks locais em `ai/04-tasks/_work/` (nao versionado)
+7. Execute prompts oficiais em `ai/07-prompts/`
+8. Registre handoffs/evals em `_runs`
 
-## Resultado esperado após o bootstrap
+## Repositorio versiona somente padroes
 
-- Projeto compilando
-- Navegação inicial funcionando
-- Tema Material 3 configurado
-- Estrutura MVI base pronta para reuso
-- Primeira feature (`feature:home`) conectada
-- Testes unitários base configurados
-- Convenções do projeto documentadas
+- contratos de agentes
+- governanca e contexto
+- skills
+- prompts reutilizaveis
+- templates oficiais de handoff/eval
+
+Arquivos de historia ativa ficam em `_work` e nao devem ser mergeados.
