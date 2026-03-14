@@ -1,4 +1,4 @@
-﻿# Prompt SSD - PLAN (Architect)
+# Prompt SSD - PLAN (Architect)
 
 Atue como `Architect Agent`.
 
@@ -26,5 +26,19 @@ Saidas esperadas:
 - `/ai/03-specs/_work/<feature>-spec.md`
 - `/ai/04-tasks/_work/task-*.md`
 - `/ai/06-skills/<skill>/SKILL.md` (somente se necessario)
+
+Ao final (obrigatorio), adicione um bloco `NEXT_STEP` contendo:
+- `spec_path` exato gerado
+- `task_path` exato da proxima task recomendada
+- 3 comandos prontos para copiar/colar:
+  - EXECUTION (Coder)
+  - REVIEW (Reviewer)
+  - TEST (Tester)
+- pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+
+Regra de encadeamento:
+- Se o usuario responder somente `EXECUTION`, executar imediatamente a task recomendada usando `spec_path` e `task_path` do bloco `NEXT_STEP`, sem pedir novo prompt.
+- Se o usuario responder somente `REVIEW`, executar imediatamente a revisao da task recomendada com os mesmos caminhos.
+- Se o usuario responder somente `TEST`, executar imediatamente o teste/avaliacao da task recomendada com os mesmos caminhos.
 
 Nao gere codigo.

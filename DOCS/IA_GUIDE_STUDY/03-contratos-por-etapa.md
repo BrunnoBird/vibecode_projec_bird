@@ -4,6 +4,7 @@
 
 - BOARD -> PRB/PRD: `ai/07-prompts/board-to-prd-prompt.md`
 - PLAN: `ai/07-prompts/plan-architect-prompt.md`
+- NEXT STEP DISPATCH: `ai/07-prompts/next-step-dispatch-prompt.md`
 - EXECUTION: `ai/07-prompts/execution-coder-prompt.md`
 - REVIEW: `ai/07-prompts/review-reviewer-prompt.md`
 - TEST: `ai/07-prompts/test-tester-prompt.md`

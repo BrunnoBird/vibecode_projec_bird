@@ -12,6 +12,7 @@
 ## Playbook sem ambiguidade
 
 - Entrada da etapa: sempre pelo prompt oficial em `ai/07-prompts/`.
+- Pos-PLAN: usar bloco `NEXT_STEP` ou `ai/07-prompts/next-step-dispatch-prompt.md` para decidir a etapa seguinte.
 - Saida da etapa: sempre registrar handoff/eval efemero em `_runs` quando aplicavel.
 - Fonte de verdade de padrao: `AGENT_START`, `ai/05-agents/`, `ai/06-skills/`, `ai/07-prompts/`.
 - Artefatos de historia em execucao: `ai/01-product/_work/`, `ai/03-specs/_work/`, `ai/04-tasks/_work/`.

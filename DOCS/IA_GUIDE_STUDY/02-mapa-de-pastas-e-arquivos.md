@@ -48,3 +48,6 @@ Definem responsabilidades, entradas obrigatorias e formato de saida por etapa.
 
 ### `SKILL.md`
 Define uma capacidade reutilizavel: objetivo, quando usar, entradas, saidas e regras.
+
+### Prompt de dispatch
+`ai/07-prompts/next-step-dispatch-prompt.md` monta a proxima etapa apos o PLAN com `spec_path` e `task_path` exatos.

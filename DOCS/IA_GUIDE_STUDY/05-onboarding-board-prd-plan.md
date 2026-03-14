@@ -168,3 +168,38 @@ Regra para BUG:
 4. Rodar REVIEW com `ai/07-prompts/review-reviewer-prompt.md`.
 5. Rodar TEST com `ai/07-prompts/test-tester-prompt.md`.
 6. Humano decide aceite com base no eval em `_runs`.
+
+---
+
+## Encadeamento automatico apos PLAN (sem montar prompt manual)
+
+### Opcao recomendada
+
+- O proprio `plan-architect-prompt.md` exige bloco final `NEXT_STEP`.
+- Nesse bloco, a IA deve retornar:
+  - `spec_path` exato gerado
+  - `task_path` exato da proxima task
+  - comandos prontos para `EXECUTION`, `REVIEW` e `TEST`
+  - pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+- Se voce responder apenas `EXECUTION` (ou `REVIEW` / `TEST`), a IA deve iniciar imediatamente a etapa escolhida usando os caminhos do `NEXT_STEP`.
+
+### Opcao alternativa (quando o PLAN ja rodou)
+
+Use o prompt:
+- `ai/07-prompts/next-step-dispatch-prompt.md`
+
+Exemplo:
+
+```md
+Atue como orquestrador da proxima etapa.
+Leia e siga: ai/07-prompts/next-step-dispatch-prompt.md
+Feature: <feature>
+```
+
+Saida esperada:
+- `spec_path` exato
+- `task_path` exato
+- prompt pronto de Coder
+- prompt pronto de Reviewer
+- prompt pronto de Tester
+- pergunta final de decisao da proxima etapa
