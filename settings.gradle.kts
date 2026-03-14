@@ -11,9 +11,11 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -23,6 +25,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "VibeCodeProjecBird"
+
 include(":app")
-include(":core")
-include(":features")
+include(":core:common")
+include(":core:ui")
+include(":core:designsystem")
+include(":core:navigation")
+include(":core:data")
+include(":core:testing")
+include(":feature:home")

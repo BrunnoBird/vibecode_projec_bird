@@ -4,27 +4,28 @@ description: Cria a base de um projeto Android modular com Kotlin, Compose, Mate
 ---
 
 # Objetivo
-Criar o esqueleto inicial do projeto de forma previsível e pronta para crescimento.
+Transformar um template Android inicial em uma base modular, previsível e testável para futuras features.
 
 # Quando usar
 - Início de um novo projeto Android
-- Reestruturação inicial de projeto ainda sem base consolidada
+- Reestruturação de um projeto Android ainda sem arquitetura consolidada
 
 # Entradas esperadas
 - Nome do projeto
-- Lista de módulos desejados
-- Padrão arquitetural
-- Dependências obrigatórias
+- Estrutura modular desejada
+- Stack obrigatória
+- Restrições arquiteturais do bootstrap
 
-# Saída esperada
-- Estrutura de módulos
-- Build scripts
-- Tema base
-- Feature shell inicial
-- Baseline MVI
-- Baseline de testes
+# Saídas esperadas
+- Módulos `app`, `core:*` e `feature:*`
+- Build scripts coerentes
+- Tema compartilhado em `core:designsystem`
+- Baseline MVI em `core:common`
+- Navegação inicial no `app`
+- Baseline de testes em `core:testing`
 
 # Regras
-- Manter simplicidade
-- Não criar módulos especulativos
-- Garantir compilação e clareza
+- Preferir DI manual no bootstrap
+- Não criar camadas de domain/data por feature sem uso real
+- Não criar design system complexo
+- Garantir compilação, clareza estrutural e testabilidade
