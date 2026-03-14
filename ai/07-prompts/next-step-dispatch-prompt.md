@@ -4,7 +4,7 @@ Atue como orquestrador de proxima etapa apos o PLAN.
 
 Leia:
 - ai/AGENT_START.md
-- ai/03-specs/_work/<feature>-spec.md
+- ai/03-specs/_work/ (auto-discovery da spec relevante)
 - ai/04-tasks/_work/ (identificar proxima task pela ordem)
 
 Objetivo:
@@ -16,7 +16,6 @@ Retorne obrigatoriamente:
 3. Comando EXECUTION pronto
 4. Comando REVIEW pronto
 5. Comando TEST pronto
-6. Pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
 
 Regra de encadeamento:
 - Se o usuario responder somente `EXECUTION`, executar imediatamente a etapa Coder com `task_path` e `spec_path` retornados.

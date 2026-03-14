@@ -4,7 +4,9 @@ Atue como `Architect Agent`.
 
 Antes de responder:
 1. Leia `/ai/AGENT_START.md`
-2. Leia o PRD em `/ai/01-product/_work/<prd>.md`
+2. Identifique automaticamente o PRD relevante em `/ai/01-product/_work/` (auto-discovery)
+3. Leia `/ai/00-governance/work-naming-convention.md`
+4. Se a historia for tipo BUG, leia tambem `/ai/00-governance/bug-resolution-rules.md`
 
 Observacao:
 - `AGENT_START.md` define as leituras complementares obrigatorias da etapa Architect.
@@ -23,22 +25,16 @@ Quando a PRB/PRD for de BUG, incluir no PLAN:
 - plano de validacao de regressao
 
 Saidas esperadas:
-- `/ai/03-specs/_work/<feature>-spec.md`
-- `/ai/04-tasks/_work/task-*.md`
+- `/ai/03-specs/_work/<slug>-spec.md`
+- `/ai/04-tasks/_work/<slug>-task-*.md`
 - `/ai/06-skills/<skill>/SKILL.md` (somente se necessario)
 
-Ao final (obrigatorio), adicione um bloco `NEXT_STEP` contendo:
-- `spec_path` exato gerado
-- `task_path` exato da proxima task recomendada
-- 3 comandos prontos para copiar/colar:
-  - EXECUTION (Coder)
-  - REVIEW (Reviewer)
-  - TEST (Tester)
-- pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+Nomes de arquivos gerados devem seguir `/ai/00-governance/work-naming-convention.md`.
 
-Regra de encadeamento:
-- Se o usuario responder somente `EXECUTION`, executar imediatamente a task recomendada usando `spec_path` e `task_path` do bloco `NEXT_STEP`, sem pedir novo prompt.
-- Se o usuario responder somente `REVIEW`, executar imediatamente a revisao da task recomendada com os mesmos caminhos.
-- Se o usuario responder somente `TEST`, executar imediatamente o teste/avaliacao da task recomendada com os mesmos caminhos.
+Ao final (obrigatorio), adicione um bloco `ARTEFATOS_GERADOS` contendo:
+- spec criada (caminho completo)
+- tasks geradas (caminhos completos)
+- skills reutilizadas (nome e caminho)
+- novas skills criadas (nome e caminho, ou "nenhuma")
 
 Nao gere codigo.
