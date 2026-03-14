@@ -46,3 +46,14 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# AI execution artifacts (ephemeral)
+ai/_tmp/
+ai/07-prompts/_scratch/
+ai/08-handoffs/_runs/
+ai/09-evals/_runs/
+
+# AI story artifacts (do not merge)
+ai/01-product/_work/
+ai/03-specs/_work/
+ai/04-tasks/_work/
