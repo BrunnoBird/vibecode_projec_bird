@@ -29,12 +29,9 @@ Validar consistencia tecnica, riscos e aderencia ao SSD.
 
 ## Formato de saida obrigatorio
 
-Para cada achado:
-1. Severidade (`alta`, `media`, `baixa`)
-2. Problema
-3. Impacto
-4. Correcao pratica sugerida
+A sua resposta deve ser dividida em DUAS partes simultâneas:
 
-Se nao houver achados, declarar explicitamente `sem achados` e citar riscos residuais.
+1. **Retorno no chat:** Resumo dos achados por severidade (`alta`, `media`, `baixa`) contendo problema, impacto e correção sugerida.
+2. **Arquivo de revisão:** Criar o arquivo `ai/04-tasks/_work/<task>-review.md` contendo todos esses mesmos achados em formato de checklist (`- [ ]`). Assim, o desenvolvedor pode usar este markdown temporário para ticar os erros que for corrigindo.
 
-
+Se nao houver achados, declarar explicitamente `sem achados` na conversa e no arquivo de revisão, citando os riscos residuais.

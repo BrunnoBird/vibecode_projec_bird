@@ -27,9 +27,9 @@ Gerar e executar validacao minima efetiva com foco em risco.
 
 ## Formato de saida obrigatorio
 
-1. Matriz de cenarios (fluxo principal + edge cases)
-2. Cobertura por risco
-3. Evidencias de execucao
-4. Pendencias e recomendacoes
+A sua resposta deve ser dividida em DUAS partes simultâneas:
+
+1. **Retorno no chat:** Matriz de cenarios, cobertura por risco, evidencias de execucao e pendencias/recomendacoes.
+2. **Arquivo de avaliacao:** Criar o arquivo `ai/04-tasks/_work/<task>-eval.md` contendo a avaliação, o aceite e as pendencias em formato de checklist. Assim o usuário/desenvolvedor pode usar o markdown local para se guiar.
 
 

@@ -23,4 +23,5 @@ Retorne os achados por severidade (`alta`, `media`, `baixa`) contendo:
 - impacto
 - correcao pratica sugerida
 
-Se nao houver problemas, declarar `sem achados` e riscos residuais.
+Além de retornar no chat, crie um arquivo temporário com o formato de checklist (usando `- [ ]`) contendo a sua revisão e salve-o em **`ai/04-tasks/_work/<task>-review.md`**.
+O objetivo deste arquivo é permitir que o usuário vá marcando os achados conforme for corrigindo. Se nao houver problemas, declarar o aceite formal também no arquivo local.

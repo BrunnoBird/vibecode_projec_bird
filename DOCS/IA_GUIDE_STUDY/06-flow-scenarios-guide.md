@@ -181,8 +181,8 @@ Prompt 1: BOARD → PRD          → ai/01-product/_work/feature-tela-favoritos-
 Prompt 2: PRD → PLAN           → ai/03-specs/_work/tela-favoritos-spec.md
                                   ai/04-tasks/_work/tela-favoritos-task-01..04.md
 Prompt 3: EXECUTION task-01    → código implementado (na conversa e projeto)
-Prompt 4: REVIEW task-01       → achados             (na conversa)
-Prompt 5: TEST task-01         → cenários            (na conversa)
+Prompt 4: REVIEW task-01       → achados (conversa) + `ai/04-tasks/_work/*-review.md`
+Prompt 5: TEST task-01         → cenários (conversa) + `ai/04-tasks/_work/*-eval.md`
 Prompt 6: EXECUTION task-02    → código implementado
 ...repete até última task...
 ```
@@ -306,8 +306,8 @@ Prompt 1: BOARD → PRD (BUG)    → ai/01-product/_work/bug-perfil-crash-nome-n
 Prompt 2: PRD → PLAN (BUG)     → spec com hipótese de causa raiz + correção mínima
                                   ai/04-tasks/_work/perfil-crash-nome-null-task-01..02.md
 Prompt 3: EXECUTION task-01    → correção mínima implementada
-Prompt 4: REVIEW task-01       → revisão
-Prompt 5: TEST task-01         → teste de regressão
+Prompt 4: REVIEW task-01       → revisão (conversa) + `*-review.md` em `_work/`
+Prompt 5: TEST task-01         → teste de regressão + `*-eval.md` em `_work/`
 Prompt 6: EXECUTION task-02    → testes unitários
 ```
 

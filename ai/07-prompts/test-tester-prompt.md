@@ -23,3 +23,6 @@ Retorne:
 2. cobertura por risco
 3. evidencias de execucao
 4. pendencias/recomendacoes
+
+Além de retornar no chat, crie um arquivo com a matriz de validação e pendências usando markdown checklist (`- [ ] / - [x]`) e salve em **`ai/04-tasks/_work/<task>-eval.md`**.
+O objetivo é que o usuário possa usar este arquivo temporário como histórico local antes do PRD ser promovido ao history.
