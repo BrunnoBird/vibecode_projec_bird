@@ -1,4 +1,4 @@
-﻿# AGENT START
+# AGENT START
 
 Este documento define o contrato global de funcionamento dos agentes de IA neste projeto.
 
@@ -34,6 +34,20 @@ Para evitar merge de arquivos especificos de historia, usar por padrao:
 
 Esses diretorios sao ignorados no git e servem apenas para execucao local do fluxo.
 
+Nomenclatura obrigatoria: seguir `ai/00-governance/work-naming-convention.md`.
+
+Auto-discovery: quando um prompt referenciar `_work/` sem caminho explicito:
+- 1 arquivo na pasta → usar automaticamente.
+- Multiplos arquivos → selecionar pelo slug mais proximo ao contexto.
+- 0 arquivos → informar ao usuario.
+
+## Politica de resolucao de bugs
+
+Quando a historia for do tipo BUG, todos os agents devem ler e aplicar automaticamente:
+- `ai/00-governance/bug-resolution-rules.md`
+
+Essas regras nao precisam ser repetidas nos prompts.
+
 ## Governanca Humano x IA
 
 - Humano define visao de produto, arquitetura alvo, escopo e prioridades.
@@ -48,8 +62,9 @@ Entrada operacional padrao: `ai/07-prompts/plan-architect-prompt.md`
 1. `/ai/00-governance/`
 2. `/ai/02-context/context-disclosure.md`
 3. `/ai/05-agents/architect-agent.md`
-4. `/ai/01-product/_work/` (PRB/PRD da feature em execucao)
+4. `/ai/01-product/_work/` (auto-discovery do PRB/PRD relevante)
 5. `/ai/06-skills/`
+6. `/ai/00-governance/bug-resolution-rules.md` (quando tipo = BUG)
 
 ### Etapa Coder (EXECUTION)
 Entrada operacional padrao: `ai/07-prompts/execution-coder-prompt.md`

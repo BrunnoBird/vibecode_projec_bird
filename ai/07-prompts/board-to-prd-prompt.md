@@ -1,16 +1,18 @@
-﻿# Prompt SSD - BOARD TO PRB/PRD
+# Prompt SSD - BOARD TO PRB/PRD
 
 Atue como apoio de Product + Tech Writing.
 
 Leia:
 - ai/AGENT_START.md
+- ai/00-governance/work-naming-convention.md
 - Historia do board informada abaixo
 
 Objetivo:
 - transformar a historia do board em um PRB/PRD claro, verificavel e pronto para PLAN.
 
 Saida esperada:
-- `ai/01-product/_work/<feature>-prd.md`
+- `ai/01-product/_work/<slug>-prd.md`
+- O nome do arquivo deve ser gerado automaticamente seguindo `ai/00-governance/work-naming-convention.md`
 
 Estrutura obrigatoria:
 1. Resumo

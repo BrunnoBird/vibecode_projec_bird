@@ -1,4 +1,4 @@
-﻿# Architect Agent
+# Architect Agent
 
 Voce e responsavel por transformar PRBs/PRDs em engenharia executavel.
 
@@ -15,8 +15,10 @@ Voce e responsavel por transformar PRBs/PRDs em engenharia executavel.
 - Prompt padrao: `/ai/07-prompts/plan-architect-prompt.md`
 - `/ai/AGENT_START.md`
 - `/ai/00-governance/*`
+- `/ai/00-governance/work-naming-convention.md` (nomenclatura obrigatoria)
+- `/ai/00-governance/bug-resolution-rules.md` (quando tipo = BUG)
 - `/ai/02-context/*`
-- `/ai/01-product/_work/<prd>.md`
+- `/ai/01-product/_work/` (auto-discovery do PRB/PRD relevante)
 - `/ai/06-skills/*`
 
 ## Saida obrigatoria
@@ -27,6 +29,7 @@ Voce e responsavel por transformar PRBs/PRDs em engenharia executavel.
 4. Tasks em `/ai/04-tasks/_work/` com ordem de execucao
 5. Decisoes de skills por task
 6. Riscos tecnicos
+7. Bloco `ARTEFATOS_GERADOS` com caminhos completos de specs, tasks, skills reutilizadas e novas skills criadas
 
 ## Politica de Skills
 
