@@ -35,6 +35,8 @@ Atue como apoio de Product + Tech Writing.
 Use como base o template:
 - ai/07-prompts/board-to-prd-prompt.md
 
+Projeto alvo: <nome-da-pasta-em-app>
+
 Historia do Board:
 - Titulo: Implementar tela de favoritos
 - Contexto: O app atualmente não permite salvar itens como favoritos.
@@ -78,6 +80,8 @@ Leia:
 - ai/07-prompts/plan-architect-prompt.md
 - ai/01-product/_work/<feature>-prd.md
 
+Projeto alvo: <nome-da-pasta-em-app>
+
 Saida esperada:
 - ai/03-specs/_work/<feature>-spec.md
 - ai/04-tasks/_work/task-*.md
@@ -108,6 +112,7 @@ Saida esperada:
 ```
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/tela-favoritos-task-01.md
 Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
@@ -117,7 +122,6 @@ Spec: ai/03-specs/_work/tela-favoritos-spec.md
 - Resumo da implementação
 - Arquivos alterados
 - Testes adicionados
-- Handoff em `ai/08-handoffs/_runs/2026-03-14_task-01_coder-handoff.md`
 
 **Você faz:** Revisa o código. Se ok, pode fazer REVIEW ou ir direto para a próxima task.
 
@@ -128,6 +132,7 @@ Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
 Atue como Reviewer Agent.
 Leia e siga: ai/07-prompts/review-reviewer-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/tela-favoritos-task-01.md
 Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
@@ -135,7 +140,6 @@ Spec: ai/03-specs/_work/tela-favoritos-spec.md
 **O que a IA entrega:**
 - Achados por severidade (alta/média/baixa)
 - Impacto e correção prática para cada achado
-- Handoff em `ai/08-handoffs/_runs/2026-03-14_task-01_reviewer-handoff.md`
 
 ---
 
@@ -144,6 +148,7 @@ Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/tela-favoritos-task-01.md
 Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
@@ -152,7 +157,6 @@ Spec: ai/03-specs/_work/tela-favoritos-spec.md
 - Cenários mínimos de teste
 - Cobertura por risco
 - Evidências de execução
-- Eval em `ai/09-evals/_runs/2026-03-14_task-01_eval.md`
 
 ---
 
@@ -176,10 +180,10 @@ A IA retorna os caminhos exatos e os comandos prontos para copiar.
 Prompt 1: BOARD → PRD          → ai/01-product/_work/feature-tela-favoritos-prd.md
 Prompt 2: PRD → PLAN           → ai/03-specs/_work/tela-favoritos-spec.md
                                   ai/04-tasks/_work/tela-favoritos-task-01..04.md
-Prompt 3: EXECUTION task-01    → código + handoff
-Prompt 4: REVIEW task-01       → achados + handoff  (opcional)
-Prompt 5: TEST task-01         → cenários + eval    (opcional)
-Prompt 6: EXECUTION task-02    → código + handoff
+Prompt 3: EXECUTION task-01    → código implementado (na conversa e projeto)
+Prompt 4: REVIEW task-01       → achados             (na conversa)
+Prompt 5: TEST task-01         → cenários            (na conversa)
+Prompt 6: EXECUTION task-02    → código implementado
 ...repete até última task...
 ```
 
@@ -200,6 +204,8 @@ Atue como apoio de Product + Tech Writing.
 
 Use como base o template:
 - ai/07-prompts/board-to-prd-prompt.md
+
+Projeto alvo: bird-watcher
 
 Historia do Board:
 - Titulo: App crasha ao abrir perfil com nome null
@@ -244,6 +250,8 @@ Leia:
 - ai/07-prompts/plan-architect-prompt.md
 - ai/01-product/_work/<bug>-prd.md
 
+Projeto alvo: bird-watcher
+
 Saida esperada:
 - ai/03-specs/_work/<bug>-spec.md
 - ai/04-tasks/_work/task-*.md
@@ -272,6 +280,7 @@ Saida esperada:
 ```
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Projeto alvo: bird-watcher
 Task alvo: ai/04-tasks/_work/perfil-crash-nome-null-task-01.md
 Spec: ai/03-specs/_work/perfil-crash-nome-null-spec.md
 ```
@@ -314,6 +323,7 @@ Se o PLAN já gerou uma task de testes, basta executá-la normalmente:
 ```
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/tela-favoritos-task-03.md
 Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
@@ -329,6 +339,7 @@ Quando já existe código implementado e você quer a IA gerar testes unitários
 ```
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/tela-favoritos-task-02.md
 Spec: ai/03-specs/_work/tela-favoritos-spec.md
 ```
@@ -362,7 +373,7 @@ A IA vai:
 2. Analisar o ViewModel indicado
 3. Gerar testes unitários seguindo as convenções do projeto
 
-> **Nota:** Esta variante não gera PRD, spec, tasks, handoffs nem evals. É um atalho para quando você só precisa de testes e não quer o fluxo formal.
+> **Nota:** Esta variante não gera PRD, spec, tasks nem históricos em chats. É um atalho para quando você só precisa de testes e não quer o fluxo formal.
 
 ---
 
@@ -373,6 +384,7 @@ Após corrigir um bug, pedir testes específicos de regressão:
 ```
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Projeto alvo: bird-watcher
 Task alvo: ai/04-tasks/_work/perfil-crash-nome-null-task-02.md
 Spec: ai/03-specs/_work/perfil-crash-nome-null-spec.md
 ```
@@ -420,7 +432,9 @@ A IA sabe (via spec) que é um BUG e vai:
 
 3. **Auto-discovery funciona.** Você não precisa lembrar o nome exato do arquivo. Se houver apenas 1 PRD/spec/task em `_work/`, a IA encontra sozinha.
 
-4. **Limpe `_work/` entre features.** As pastas `_work/` são efêmeras. Após concluir uma feature, limpe os arquivos para que o auto-discovery funcione perfeitamente na próxima.
+4. **Limpe `_work/` entre features e promova o PRD.** As pastas `_work/` são efêmeras. Após concluir uma feature:
+   - Mova o PRD de `ai/01-product/_work/` para `ai/01-product/history/` para manter o histórico versionado.
+   - Limpe os arquivos em specs e tasks para que o auto-discovery funcione perfeitamente na próxima feature.
 
 5. **Use NEXT STEP DISPATCH como atalho.** Em vez de montar os comandos manualmente, use o prompt `next-step-dispatch-prompt.md` para que a IA descubra os caminhos e monte os comandos prontos para você.
 

@@ -4,6 +4,13 @@ Atue como orquestrador de proxima etapa apos o PLAN.
 
 Leia:
 - ai/AGENT_START.md
+
+Projeto alvo: <nome-do-sub-projeto>
+
+⛔ Se não informado, pare e exiba:
+"⛔ Projeto alvo não declarado. Informe: `Projeto alvo: <nome-da-pasta-em-app>` antes de prosseguir. Não existe inferência de sub-projeto."
+
+Após identificar, leia também: `app/<sub-projeto>/ai/context-disclosure.md`
 - ai/03-specs/_work/ (auto-discovery da spec relevante)
 - ai/04-tasks/_work/ (identificar proxima task pela ordem)
 
@@ -27,6 +34,7 @@ Formato dos comandos:
 ```md
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Projeto alvo: <sub-projeto>
 Task alvo: <task_path>
 Spec: <spec_path>
 ```
@@ -34,6 +42,7 @@ Spec: <spec_path>
 ```md
 Atue como Reviewer Agent.
 Leia e siga: ai/07-prompts/review-reviewer-prompt.md
+Projeto alvo: <sub-projeto>
 Task alvo: <task_path>
 Spec: <spec_path>
 ```
@@ -41,6 +50,7 @@ Spec: <spec_path>
 ```md
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Projeto alvo: <sub-projeto>
 Task alvo: <task_path>
 Spec: <spec_path>
 ```

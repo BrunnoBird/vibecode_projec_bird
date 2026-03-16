@@ -1,4 +1,4 @@
-﻿# 03 - Contratos por Etapa
+# 03 - Contratos por Etapa
 
 ## Prompt padrao por etapa
 
@@ -12,7 +12,10 @@
 ## Architect Agent
 
 Entrada:
-- PRB/PRD em `ai/01-product/_work/` + contexto + governanca + skills existentes.
+- PRB/PRD em `ai/01-product/_work/`
+- `Projeto alvo:` declarado
+- Contextos em `ai/02-context/` e `app/<sub-proj>/ai/`
+- Governanca e skills existentes.
 
 Saida obrigatoria:
 - Spec
@@ -24,36 +27,39 @@ Saida obrigatoria:
 ## Coder Agent
 
 Entrada:
+- `Projeto alvo:` declarado
+- Contextos globais e locais
 - Spec e task ativa em `_work` + skill associada (quando existir).
 
 Saida esperada:
 - codigo da task
 - testes proporcionais ao risco
-- riscos/follow-ups
-- handoff em `_runs` baseado no template oficial
+- riscos/follow-ups (direto na conversa)
 
 ## Reviewer Agent
 
 Entrada:
-- diff/codigo + spec/task em `_work` + handoff do coder.
+- `Projeto alvo:` declarado
+- Contextos globais e locais
+- diff/codigo + spec/task em `_work`
 
 Saida obrigatoria:
 - achados por severidade (`alta`, `media`, `baixa`)
 - impacto
-- correcao pratica sugerida
-- handoff de review em `_runs` baseado no template oficial
+- correcao pratica sugerida (direto na conversa)
 
 ## Tester Agent
 
 Entrada:
-- codigo revisado + spec/task em `_work` + handoff do reviewer.
+- `Projeto alvo:` declarado
+- Contextos globais e locais
+- codigo revisado + spec/task em `_work`
 
 Saida obrigatoria:
 - cenarios minimos
 - cobertura por risco
 - evidencias de execucao
-- pendencias/recomendacoes
-- eval em `_runs` baseado no template oficial
+- pendencias/recomendacoes (direto na conversa)
 
 ## Regra de qualidade transversal
 

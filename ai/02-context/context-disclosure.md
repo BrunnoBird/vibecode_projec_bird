@@ -1,5 +1,9 @@
-# Context Disclosure
+# Context Disclosure — Base Global
 
+> Este arquivo descreve a stack compartilhada por todos os sub-projetos em `app/`.
+> Agents devem sempre complementar esta leitura com:
+> `app/<sub-projeto-alvo>/ai/context-disclosure.md`
+> Em caso de conflito, o context-disclosure do sub-projeto prevalece.
 ## Plataforma
 - Android
 

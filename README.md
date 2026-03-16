@@ -1,4 +1,4 @@
-﻿# Android Kotlin Compose SSD + Codex Starter
+# Android Kotlin Compose SSD + Codex Starter
 
 Este starter kit inicia um projeto Android com:
 
@@ -11,6 +11,7 @@ Este starter kit inicia um projeto Android com:
 - Modularizacao
 - Fluxo SSD (Specification-Driven Development)
 - Agentes e skills com Codex
+- Suporte a Multi-Projeto (estrutura separada por responsabilidade)
 
 ## Objetivo
 
@@ -30,18 +31,18 @@ Guia principal em partes:
 1. Leia `ai/AGENT_START.md`
 2. Leia `ai/00-governance/*`
 3. Leia `ai/02-context/*`
-4. Gere PRB/PRD local em `ai/01-product/_work/` (nao versionado)
-5. Gere spec local em `ai/03-specs/_work/` (nao versionado)
-6. Gere tasks locais em `ai/04-tasks/_work/` (nao versionado)
+4. Defina o sub-projeto com `Projeto alvo:` nos prompts
+5. Gere PRB/PRD local em `ai/01-product/_work/` (rascunho, nao versionado)
+6. Gere spec e tasks locais em `ai/03-specs/_work/` e `ai/04-tasks/_work/`
 7. Execute prompts oficiais em `ai/07-prompts/`
-8. Registre handoffs/evals em `_runs`
+8. Se aprovado, promova PRD para `ai/01-product/history/` (versionado)
 
 ## Repositorio versiona somente padroes
 
 - contratos de agentes
-- governanca e contexto
+- governanca e contexto (global e por sub-projeto)
 - skills
 - prompts reutilizaveis
-- templates oficiais de handoff/eval
+- documentacao viva (PRDs aprovados em `ai/01-product/history/`)
 
-Arquivos de historia ativa ficam em `_work` e nao devem ser mergeados.
+Arquivos de historia ativa (specs, tasks, PRD em rascunho) ficam em `_work` e nao devem ser mergeados.

@@ -4,6 +4,13 @@ Atue como `Architect Agent`.
 
 Antes de responder:
 1. Leia `/ai/AGENT_START.md`
+
+Projeto alvo: <nome-do-sub-projeto>
+
+⛔ Se não informado, pare e exiba:
+"⛔ Projeto alvo não declarado. Informe: `Projeto alvo: <nome-da-pasta-em-app>` antes de prosseguir. Não existe inferência de sub-projeto."
+
+Após identificar, leia também: `app/<sub-projeto>/ai/context-disclosure.md`
 2. Identifique automaticamente o PRD relevante em `/ai/01-product/_work/` (auto-discovery)
 3. Leia `/ai/00-governance/work-naming-convention.md`
 4. Se a historia for tipo BUG, leia tambem `/ai/00-governance/bug-resolution-rules.md`

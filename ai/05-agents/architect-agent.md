@@ -18,6 +18,7 @@ Voce e responsavel por transformar PRBs/PRDs em engenharia executavel.
 - `/ai/00-governance/work-naming-convention.md` (nomenclatura obrigatoria)
 - `/ai/00-governance/bug-resolution-rules.md` (quando tipo = BUG)
 - `/ai/02-context/*`
+- `app/<sub-projeto>/ai/context-disclosure.md` (conforme `Projeto alvo:` declarado no prompt)
 - `/ai/01-product/_work/` (auto-discovery do PRB/PRD relevante)
 - `/ai/06-skills/*`
 

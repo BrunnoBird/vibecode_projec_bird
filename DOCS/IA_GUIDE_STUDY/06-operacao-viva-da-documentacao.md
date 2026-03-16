@@ -1,4 +1,4 @@
-﻿# 06 - Operacao Viva da Documentacao
+# 06 - Operacao Viva da Documentacao
 
 ## Checklist operacional rapido
 
@@ -6,18 +6,18 @@
 2. Confirmar PRB/PRD, spec e task corretos em `_work` para o escopo.
 3. Confirmar status de skill por task.
 4. Executar etapa atual sem expandir escopo.
-5. Registrar handoff/eval em `_runs` usando template oficial.
-6. Registrar evidencias de review/test antes do aceite final.
+5. Garantir que o `Projeto alvo:` está declarado no prompt.
+6. Promover PRD aprovado para `history/` ao final do fluxo.
 
 ## Playbook sem ambiguidade
 
 - Entrada da etapa: sempre pelo prompt oficial em `ai/07-prompts/`.
 - Pos-PLAN: usar bloco `NEXT_STEP` ou `ai/07-prompts/next-step-dispatch-prompt.md` para decidir a etapa seguinte.
-- Saida da etapa: sempre registrar handoff/eval efemero em `_runs` quando aplicavel.
+- Saida da etapa: documentada no próprio log da conversa; revisar no PR da branch.
 - Fonte de verdade de padrao: `AGENT_START`, `ai/05-agents/`, `ai/06-skills/`, `ai/07-prompts/`.
 - Artefatos de historia em execucao: `ai/01-product/_work/`, `ai/03-specs/_work/`, `ai/04-tasks/_work/`.
-- Artefatos efemeros (`_tmp`, `_scratch`, `_runs`) nao substituem documentos oficiais.
-- Templates oficiais de handoff/eval devem ser reutilizados para padrao de time.
+- Artefatos aprovados: `ai/01-product/history/`.
+- Artefatos efemeros (`_tmp`, `_scratch`) nao substituem documentos oficiais.
 
 ## Cadencia de revisao da documentacao
 
@@ -29,7 +29,6 @@
 Atualizar documentacao sempre que houver:
 - mudanca de fluxo SSD
 - mudanca de contrato de agentes
-- mudanca de templates de `_runs`
 - nova convencao de task/spec
 - nova politica de skills
 - nova pratica de review/test

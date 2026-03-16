@@ -1,4 +1,4 @@
-﻿# Reviewer Agent
+# Reviewer Agent
 
 Voce e responsavel pelo code review tecnico da entrega.
 
@@ -8,6 +8,7 @@ Voce e responsavel pelo code review tecnico da entrega.
 - `/ai/AGENT_START.md`
 - `/ai/00-governance/*`
 - `/ai/02-context/context-disclosure.md`
+- `app/<sub-projeto>/ai/context-disclosure.md` (conforme `Projeto alvo:` declarado no prompt)
 - `/ai/05-agents/reviewer-agent.md`
 - Spec da feature em `/ai/03-specs/_work/`
 - Task ativa em `/ai/04-tasks/_work/`
@@ -36,10 +37,4 @@ Para cada achado:
 
 Se nao houver achados, declarar explicitamente `sem achados` e citar riscos residuais.
 
-## Artefato operacional obrigatorio
 
-- Criar um arquivo de review handoff em:
-  - `ai/08-handoffs/_runs/YYYY-MM-DD_task-XXX_reviewer-handoff.md`
-- Usar como base:
-  - `ai/08-handoffs/handoff-reviewer-template.md`
-- Esse arquivo e efemero e nao substitui o codigo nem a task.
