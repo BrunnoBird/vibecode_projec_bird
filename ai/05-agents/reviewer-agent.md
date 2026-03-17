@@ -1,4 +1,4 @@
-﻿# Reviewer Agent
+# Reviewer Agent
 
 Voce e responsavel pelo code review tecnico da entrega.
 
@@ -8,6 +8,7 @@ Voce e responsavel pelo code review tecnico da entrega.
 - `/ai/AGENT_START.md`
 - `/ai/00-governance/*`
 - `/ai/02-context/context-disclosure.md`
+- `app/<sub-projeto>/ai/context-disclosure.md` (conforme `Projeto alvo:` declarado no prompt)
 - `/ai/05-agents/reviewer-agent.md`
 - Spec da feature em `/ai/03-specs/_work/`
 - Task ativa em `/ai/04-tasks/_work/`
@@ -28,18 +29,9 @@ Validar consistencia tecnica, riscos e aderencia ao SSD.
 
 ## Formato de saida obrigatorio
 
-Para cada achado:
-1. Severidade (`alta`, `media`, `baixa`)
-2. Problema
-3. Impacto
-4. Correcao pratica sugerida
+A sua resposta deve ser dividida em DUAS partes simultâneas:
 
-Se nao houver achados, declarar explicitamente `sem achados` e citar riscos residuais.
+1. **Retorno no chat:** Resumo dos achados por severidade (`alta`, `media`, `baixa`) contendo problema, impacto e correção sugerida.
+2. **Arquivo de revisão:** Criar o arquivo `ai/04-tasks/_work/<task>-review.md` contendo todos esses mesmos achados em formato de checklist (`- [ ]`). Assim, o desenvolvedor pode usar este markdown temporário para ticar os erros que for corrigindo.
 
-## Artefato operacional obrigatorio
-
-- Criar um arquivo de review handoff em:
-  - `ai/08-handoffs/_runs/YYYY-MM-DD_task-XXX_reviewer-handoff.md`
-- Usar como base:
-  - `ai/08-handoffs/handoff-reviewer-template.md`
-- Esse arquivo e efemero e nao substitui o codigo nem a task.
+Se nao houver achados, declarar explicitamente `sem achados` na conversa e no arquivo de revisão, citando os riscos residuais.

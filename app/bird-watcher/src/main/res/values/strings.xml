@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bird Watcher</string>
+    <string name="title_meu_diario">Meu Diário</string>
+    <string name="msg_nenhuma_ave">Nenhuma ave registrada ainda</string>
+</resources>

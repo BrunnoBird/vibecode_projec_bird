@@ -1,4 +1,4 @@
-﻿# 05 - Onboarding: Board -> PRB/PRD -> Agents Flow
+# 05 - Onboarding: Board -> PRB/PRD -> Agents Flow
 
 ## Exemplo de flow real
 
@@ -17,8 +17,7 @@ Fluxo completo:
 ## Regra de padronizacao para times
 
 - Sempre iniciar etapa com prompt oficial de `ai/07-prompts/`.
-- Sempre registrar handoff/eval operacional em `_runs`.
-- Sempre usar templates oficiais para artefatos de `_runs`.
+- Sempre declarar o `Projeto alvo:` no prompt.
 
 ## Prompt recomendado para gerar PRB/PRD a partir do Board
 
@@ -32,6 +31,8 @@ Atue como apoio de Product + Tech Writing.
 
 Use como base o template:
 - ai/07-prompts/board-to-prd-prompt.md
+
+Projeto alvo: <nome-da-pasta-em-app>
 
 Historia do Board:
 - Titulo: <titulo>
@@ -62,6 +63,8 @@ Leia:
 - ai/07-prompts/plan-architect-prompt.md
 - ai/01-product/_work/<feature>-prd.md
 
+Projeto alvo: <nome-da-pasta-em-app>
+
 Saida esperada:
 - ai/03-specs/_work/<feature>-spec.md
 - ai/04-tasks/_work/task-*.md
@@ -76,6 +79,7 @@ Saida esperada:
 ```md
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/<task>.md
 Spec: ai/03-specs/_work/<feature>-spec.md
 ```
@@ -84,6 +88,7 @@ Spec: ai/03-specs/_work/<feature>-spec.md
 ```md
 Atue como Reviewer Agent.
 Leia e siga: ai/07-prompts/review-reviewer-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/<task>.md
 Spec: ai/03-specs/_work/<feature>-spec.md
 ```
@@ -92,6 +97,7 @@ Spec: ai/03-specs/_work/<feature>-spec.md
 ```md
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Projeto alvo: <nome-da-pasta-em-app>
 Task alvo: ai/04-tasks/_work/<task>.md
 Spec: ai/03-specs/_work/<feature>-spec.md
 ```
@@ -99,10 +105,8 @@ Spec: ai/03-specs/_work/<feature>-spec.md
 ## Aplicabilidade operacional (quando usar cada pasta)
 
 1. `ai/07-prompts/`: iniciar a etapa (Board->PRB/PRD, PLAN, EXECUTION, REVIEW, TEST).
-2. `ai/08-handoffs/_runs/`: registrar entrega de Coder/Reviewer da task atual.
-3. `ai/09-evals/_runs/`: registrar validacao final de Tester.
-4. `ai/03-specs/_work/` e `ai/04-tasks/_work/`: artefatos locais da feature em execucao.
-5. `ai/08-handoffs/*.md` e `ai/09-evals/*.md`: templates oficiais versionados.
+2. `ai/03-specs/_work/` e `ai/04-tasks/_work/`: rascunhos locais da feature em execucao.
+3. `ai/01-product/history/`: PRDs aprovados ficam versionados aqui.
 
 ---
 
@@ -123,6 +127,8 @@ Atue como apoio de Product + Tech Writing.
 
 Use como base:
 - ai/07-prompts/board-to-prd-prompt.md
+
+Projeto alvo: bird-watcher
 
 Historia do Board (BUG):
 - Titulo: BUG - App fecha ao abrir Profile apos logout
@@ -150,6 +156,8 @@ Leia:
 - ai/07-prompts/plan-architect-prompt.md
 - ai/01-product/_work/bug-profile-crash-prd.md
 
+Projeto alvo: bird-watcher
+
 Gere:
 - ai/03-specs/_work/bug-profile-crash-spec.md
 - ai/04-tasks/_work/task-*.md
@@ -167,7 +175,7 @@ Regra para BUG:
 3. Rodar EXECUTION com `ai/07-prompts/execution-coder-prompt.md`.
 4. Rodar REVIEW com `ai/07-prompts/review-reviewer-prompt.md`.
 5. Rodar TEST com `ai/07-prompts/test-tester-prompt.md`.
-6. Humano decide aceite com base no eval em `_runs`.
+6. Humano decide aceite com base na avaliação final direto no chat do agente e promove PRD para `history`.
 
 ---
 

@@ -4,6 +4,13 @@ Atue como apoio de Product + Tech Writing.
 
 Leia:
 - ai/AGENT_START.md
+
+Projeto alvo: <nome-do-sub-projeto>
+
+⛔ Se não informado, pare e exiba:
+"⛔ Projeto alvo não declarado. Informe: `Projeto alvo: <nome-da-pasta-em-app>` antes de prosseguir. Não existe inferência de sub-projeto."
+
+Após identificar, leia também: `app/<sub-projeto>/ai/context-disclosure.md`
 - ai/00-governance/work-naming-convention.md
 - Historia do board informada abaixo
 

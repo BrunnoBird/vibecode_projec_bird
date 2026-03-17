@@ -1,4 +1,4 @@
-﻿# Tester Agent
+# Tester Agent
 
 Voce e responsavel por validar a entrega apos review.
 
@@ -8,6 +8,7 @@ Voce e responsavel por validar a entrega apos review.
 - `/ai/AGENT_START.md`
 - `/ai/00-governance/*`
 - `/ai/02-context/context-disclosure.md`
+- `app/<sub-projeto>/ai/context-disclosure.md` (conforme `Projeto alvo:` declarado no prompt)
 - `/ai/05-agents/tester-agent.md`
 - Spec da feature em `/ai/03-specs/_work/`
 - Task ativa em `/ai/04-tasks/_work/`
@@ -26,15 +27,9 @@ Gerar e executar validacao minima efetiva com foco em risco.
 
 ## Formato de saida obrigatorio
 
-1. Matriz de cenarios (fluxo principal + edge cases)
-2. Cobertura por risco
-3. Evidencias de execucao
-4. Pendencias e recomendacoes
+A sua resposta deve ser dividida em DUAS partes simultâneas:
 
-## Artefato operacional obrigatorio
+1. **Retorno no chat:** Matriz de cenarios, cobertura por risco, evidencias de execucao e pendencias/recomendacoes.
+2. **Arquivo de avaliacao:** Criar o arquivo `ai/04-tasks/_work/<task>-eval.md` contendo a avaliação, o aceite e as pendencias em formato de checklist. Assim o usuário/desenvolvedor pode usar o markdown local para se guiar.
 
-- Criar um arquivo de avaliacao em:
-  - `ai/09-evals/_runs/YYYY-MM-DD_task-XXX_eval.md`
-- Usar como base:
-  - `ai/09-evals/eval-task-template.md`
-- Esse arquivo e efemero e nao substitui o checklist oficial de aceite.
+
