@@ -18,6 +18,11 @@ fun AppRoot() {
                 viewModel<HomeViewModel>(
                     factory = appContainer.homeViewModelFactory
                 )
+            },
+            birdListViewModelFactory = {
+                viewModel(
+                    factory = appContainer.birdListViewModelFactory
+                )
             }
         )
     }

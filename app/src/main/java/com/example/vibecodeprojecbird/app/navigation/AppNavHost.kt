@@ -12,6 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.vibecodeprojecbird.app.features.birdlist.BirdListScreen
+import com.example.vibecodeprojecbird.app.features.birdlist.BirdListViewModel
 import com.example.vibecodeprojecbird.core.navigation.AppBottomBar
 import com.example.vibecodeprojecbird.core.navigation.AppDestination
 import com.example.vibecodeprojecbird.core.navigation.BottomNavItemId
@@ -20,7 +22,8 @@ import com.example.vibecodeprojecbird.feature.home.presentation.HomeViewModel
 
 @Composable
 fun AppNavHost(
-    homeViewModelFactory: @Composable () -> HomeViewModel
+    homeViewModelFactory: @Composable () -> HomeViewModel,
+    birdListViewModelFactory: @Composable () -> BirdListViewModel
 ) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -60,9 +63,7 @@ fun AppNavHost(
                 HomeScreen(viewModel = homeViewModelFactory())
             }
             composable(AppDestination.Search.route) {
-                Box(Modifier.fillMaxSize()) {
-                    Text("Search")
-                }
+                BirdListScreen(viewModel = birdListViewModelFactory())
             }
             composable(AppDestination.Profile.route) {
                 Box(Modifier.fillMaxSize()) {

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">VibeCodeProjecBird</string>
+    <string name="bird_list_title">Vibe Bird List</string>
+    <string name="bird_list_loading">Carregando pássaros...</string>
+    <string name="bird_list_retry">Tentar novamente</string>
+    <string name="bird_list_empty">Nenhum pássaro encontrado</string>
+    <string name="bird_list_error_generic">Ocorreu um erro inesperado</string>
+    <string name="bird_list_image_placeholder_desc">Avatar de %1$s</string>
 </resources>
