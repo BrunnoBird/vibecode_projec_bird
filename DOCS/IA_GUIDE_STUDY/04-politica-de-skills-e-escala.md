@@ -6,6 +6,7 @@ Ordem obrigatoria:
 1. analisar skills existentes em `ai/06-skills/`
 2. reutilizar antes de criar
 3. criar nova skill apenas quando houver padrao repetivel e reutilizavel
+4. versionar toda skill (`version` e `updated_at` no cabecalho)
 
 ## Quando criar nova skill
 
@@ -33,6 +34,9 @@ Criar skill quando a solucao for:
 - promover padroes recorrentes para `ai/06-skills/`
 - referenciar skill por task
 - reduzir repeticao com prompts e templates oficiais
+- separar role skills (etapa) de technical skills (capacidade)
+- aplicar carregamento sob demanda para reduzir tokens
+- aplicar contexto por projeto em `ai/02-context/projects/<project_id>/`
 
 ### Prevencao de overengineering
 - planejar o minimo necessario

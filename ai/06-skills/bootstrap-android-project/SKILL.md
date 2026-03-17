@@ -1,6 +1,8 @@
 ---
 name: bootstrap-android-project
 description: Cria a base de um projeto Android modular com Kotlin, Compose, Material 3, MVI, ViewModel e testes unitários.
+version: 1.1.0
+updated_at: 2026-03-17
 ---
 
 # Objetivo
@@ -29,3 +31,4 @@ Transformar um template Android inicial em uma base modular, previsível e test�
 - Não criar camadas de domain/data por feature sem uso real
 - Não criar design system complexo
 - Garantir compilação, clareza estrutural e testabilidade
+

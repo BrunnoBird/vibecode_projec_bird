@@ -12,10 +12,10 @@ Explicar como o projeto opera em SSD (Specification-Driven Development), mantend
 
 - Humano: define produto, escopo, prioridades e aprova plano/aceite.
 - IA Product Writer (prompt): ajuda a transformar board em PRB/PRD.
-- IA Architect: transforma PRB/PRD em spec, tasks e decisoes de skill.
-- IA Coder: implementa task por task.
-- IA Reviewer: revisa com severidade.
-- IA Tester: valida cenarios, cobertura por risco e evidencias.
+- Role skill `architect-agent`: transforma PRB/PRD em spec, tasks e decisoes de skill.
+- Role skill `coder-agent`: implementa task por task.
+- Role skill `reviewer-agent`: revisa com severidade.
+- Role skill `tester-agent`: valida cenarios, cobertura por risco e evidencias.
 
 ## Regra central
 
@@ -27,3 +27,6 @@ Sempre seguir: `Board -> PRB/PRD -> Spec -> Tasks -> Code -> Review -> Test -> A
 - Cada etapa inicia por prompt oficial em `ai/07-prompts/`.
 - Cada etapa registra artefato operacional em `_runs` quando aplicavel.
 - PRB/PRD, spec e tasks da historia ativa devem ser criados em `_work` para nao serem mergeados.
+- `ai/AGENTS.md` e contexto base da etapa: nao reler se ja estiver no contexto atual.
+- Toda etapa deve declarar `project_id` para carregar contexto do projeto alvo.
+- Em conflito PRD/Spec/Task: pausar etapa e gerar `ai/_tmp/CONFLICT.md`.

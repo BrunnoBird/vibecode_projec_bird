@@ -1,20 +1,19 @@
-﻿# Android Kotlin Compose SSD + Codex Starter
+# Android SSD + Codex Starter (Multi-Projeto)
 
-Este starter kit inicia um projeto Android com:
+Este starter kit suporta um workspace Android com multiplos projetos/modulos, por exemplo:
 
 - Kotlin
-- Jetpack Compose
-- Material Design 3
-- Arquitetura MVI
+- UI Compose ou XML (por contexto de projeto)
+- Arquitetura MVI ou MVVM (por contexto de projeto)
 - ViewModel
 - Testes unitarios
 - Modularizacao
 - Fluxo SSD (Specification-Driven Development)
-- Agentes e skills com Codex
+- Orquestracao por AGENTS + Skills com Codex
 
 ## Objetivo
 
-Manter um fluxo SSD padronizado com base em contratos de agentes, prompts reutilizaveis e skills.
+Manter um fluxo SSD padronizado com base em contrato global, prompts com tags XML e skills sob demanda/versionadas.
 
 ## Fluxo SSD adotado
 
@@ -27,21 +26,24 @@ Guia principal em partes:
 
 ## Ordem sugerida de uso
 
-1. Leia `ai/AGENT_START.md`
-2. Leia `ai/00-governance/*`
-3. Leia `ai/02-context/*`
-4. Gere PRB/PRD local em `ai/01-product/_work/` (nao versionado)
-5. Gere spec local em `ai/03-specs/_work/` (nao versionado)
-6. Gere tasks locais em `ai/04-tasks/_work/` (nao versionado)
-7. Execute prompts oficiais em `ai/07-prompts/`
-8. Registre handoffs/evals em `_runs`
+1. Leia `ai/AGENTS.md`
+2. Defina `project_id` da etapa
+3. Leia `ai/00-governance/*`
+4. Leia `ai/02-context/context-disclosure.md` + `ai/02-context/projects/<project_id>/context-disclosure.md`
+5. Gere PRB/PRD local em `ai/01-product/_work/` (nao versionado)
+6. Gere spec local em `ai/03-specs/_work/` (nao versionado)
+7. Gere tasks locais em `ai/04-tasks/_work/` (nao versionado)
+8. Execute prompts oficiais em `ai/07-prompts/`
+9. Registre handoffs/evals em `_runs`
 
 ## Repositorio versiona somente padroes
 
-- contratos de agentes
+- contrato global (`ai/AGENTS.md`)
+- skills de papel e skills tecnicas
 - governanca e contexto
-- skills
+- contextos por projeto (`ai/02-context/projects/*`)
 - prompts reutilizaveis
+- templates de spec/task/conflito
 - templates oficiais de handoff/eval
 
 Arquivos de historia ativa ficam em `_work` e nao devem ser mergeados.

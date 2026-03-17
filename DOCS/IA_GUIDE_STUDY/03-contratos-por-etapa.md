@@ -9,10 +9,14 @@
 - REVIEW: `ai/07-prompts/review-reviewer-prompt.md`
 - TEST: `ai/07-prompts/test-tester-prompt.md`
 
-## Architect Agent
+Regra comum: toda etapa deve informar `project_id`.
+
+## Role Skill `architect-agent`
 
 Entrada:
 - PRB/PRD em `ai/01-product/_work/` + contexto + governanca + skills existentes.
+- `ai/AGENTS.md` ja carregado (reler somente se nao estiver no contexto atual).
+- `ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `default`).
 
 Saida obrigatoria:
 - Spec
@@ -21,10 +25,12 @@ Saida obrigatoria:
 - ordem de execucao
 - riscos tecnicos
 
-## Coder Agent
+## Role Skill `coder-agent`
 
 Entrada:
 - Spec e task ativa em `_work` + skill associada (quando existir).
+- `ai/AGENTS.md` ja carregado (reler somente se nao estiver no contexto atual).
+- `ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `default`).
 
 Saida esperada:
 - codigo da task
@@ -32,10 +38,12 @@ Saida esperada:
 - riscos/follow-ups
 - handoff em `_runs` baseado no template oficial
 
-## Reviewer Agent
+## Role Skill `reviewer-agent`
 
 Entrada:
 - diff/codigo + spec/task em `_work` + handoff do coder.
+- `ai/AGENTS.md` ja carregado (reler somente se nao estiver no contexto atual).
+- `ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `default`).
 
 Saida obrigatoria:
 - achados por severidade (`alta`, `media`, `baixa`)
@@ -43,10 +51,12 @@ Saida obrigatoria:
 - correcao pratica sugerida
 - handoff de review em `_runs` baseado no template oficial
 
-## Tester Agent
+## Role Skill `tester-agent`
 
 Entrada:
 - codigo revisado + spec/task em `_work` + handoff do reviewer.
+- `ai/AGENTS.md` ja carregado (reler somente se nao estiver no contexto atual).
+- `ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `default`).
 
 Saida obrigatoria:
 - cenarios minimos
@@ -58,3 +68,4 @@ Saida obrigatoria:
 ## Regra de qualidade transversal
 
 Toda etapa deve respeitar escopo e nao inventar requisito fora de PRB/PRD/Spec/Task.
+Se houver conflito entre PRD, spec e task, a etapa deve pausar e gerar `ai/_tmp/CONFLICT.md`.

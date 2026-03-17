@@ -1,44 +1,56 @@
 # Prompt SSD - PLAN (Architect)
 
+<project_target>
+- project_id: <project_id>
+</project_target>
+
+<role>
 Atue como `Architect Agent`.
+</role>
 
-Antes de responder:
-1. Leia `/ai/AGENT_START.md`
-2. Leia o PRD em `/ai/01-product/_work/<prd>.md`
+<context>
+1. Leia `/ai/AGENTS.md`.
+2. Leia `/ai/02-context/context-disclosure.md`.
+3. Leia `/ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `/ai/02-context/projects/default/context-disclosure.md`).
+4. Leia `/ai/06-skills/architect-agent/SKILL.md`.
+5. Leia o PRD em `/ai/01-product/_work/<prd>.md`.
+</context>
 
-Observacao:
-- `AGENT_START.md` define as leituras complementares obrigatorias da etapa Architect.
+<task>
+Com base nos contratos permanentes do projeto, gerar:
+1. Spec tecnica
+2. Tasks pequenas e independentes
+3. Decisao de skill por task (`skill existente`, `nova skill`, `sem skill`)
+4. Ordem de execucao
+5. Riscos tecnicos
+</task>
 
-Com base nos contratos permanentes do projeto, gere:
-
-1. spec tecnica
-2. tasks pequenas e independentes
-3. decisao de skill por task (`skill existente`, `nova skill`, `sem skill`)
-4. ordem de execucao
-5. riscos tecnicos
-
-Quando a PRB/PRD for de BUG, incluir no PLAN:
-- hipotese de causa-raiz (ou causas provaveis)
-- estrategia de correcao minima (sem expandir escopo)
-- plano de validacao de regressao
-
-Saidas esperadas:
+<output>
 - `/ai/03-specs/_work/<feature>-spec.md`
 - `/ai/04-tasks/_work/task-*.md`
 - `/ai/06-skills/<skill>/SKILL.md` (somente se necessario)
 
-Ao final (obrigatorio), adicione um bloco `NEXT_STEP` contendo:
+Ao final, adicionar bloco `NEXT_STEP` com:
+- `project_id`
 - `spec_path` exato gerado
 - `task_path` exato da proxima task recomendada
-- 3 comandos prontos para copiar/colar:
-  - EXECUTION (Coder)
-  - REVIEW (Reviewer)
-  - TEST (Tester)
+- comandos prontos para EXECUTION, REVIEW e TEST
 - pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+</output>
 
-Regra de encadeamento:
-- Se o usuario responder somente `EXECUTION`, executar imediatamente a task recomendada usando `spec_path` e `task_path` do bloco `NEXT_STEP`, sem pedir novo prompt.
-- Se o usuario responder somente `REVIEW`, executar imediatamente a revisao da task recomendada com os mesmos caminhos.
-- Se o usuario responder somente `TEST`, executar imediatamente o teste/avaliacao da task recomendada com os mesmos caminhos.
+<rules>
+- Quando o PRD for BUG, incluir no PLAN:
+  - hipotese de causa-raiz (ou causas provaveis)
+  - estrategia de correcao minima (sem expandir escopo)
+  - plano de validacao de regressao
+- Se o usuario responder somente `EXECUTION`, `REVIEW` ou `TEST`, executar imediatamente usando o `NEXT_STEP`.
+- Nao gerar codigo.
+</rules>
 
-Nao gere codigo.
+<conflict_protocol>
+Se houver conflito entre PRD e spec proposta:
+1. Pare a etapa PLAN.
+2. Gere `ai/_tmp/CONFLICT.md` com base em `ai/00-governance/conflict-template.md`.
+3. Registre conflito e perguntas para decisao humana.
+4. Aguarde decisao humana antes de continuar.
+</conflict_protocol>

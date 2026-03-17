@@ -1,47 +1,62 @@
 # Prompt SSD - NEXT STEP DISPATCH
 
+<project_target>
+- project_id: <project_id>
+</project_target>
+
+<role>
 Atue como orquestrador de proxima etapa apos o PLAN.
+</role>
 
-Leia:
-- ai/AGENT_START.md
-- ai/03-specs/_work/<feature>-spec.md
-- ai/04-tasks/_work/ (identificar proxima task pela ordem)
+<context>
+- Leia `ai/AGENTS.md`.
+- Leia `ai/02-context/context-disclosure.md`.
+- Leia `ai/02-context/projects/<project_id>/context-disclosure.md` (ou fallback `ai/02-context/projects/default/context-disclosure.md`).
+- Leia `ai/03-specs/_work/<feature>-spec.md`.
+- Leia `ai/04-tasks/_work/` e identifique a proxima task pela ordem.
+</context>
 
-Objetivo:
-- descobrir caminhos exatos de spec/task e montar comandos prontos para a proxima etapa.
+<task>
+Descobrir caminhos exatos de spec/task e montar comandos prontos para a proxima etapa.
+</task>
 
+<output>
 Retorne obrigatoriamente:
-1. `spec_path` exato
-2. `task_path` exato recomendado
-3. Comando EXECUTION pronto
-4. Comando REVIEW pronto
-5. Comando TEST pronto
-6. Pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+1. `project_id`
+2. `spec_path` exato
+3. `task_path` exato recomendado
+4. Comando EXECUTION pronto
+5. Comando REVIEW pronto
+6. Comando TEST pronto
+7. Pergunta final: `Deseja executar EXECUTION, REVIEW ou TEST agora?`
+</output>
 
-Regra de encadeamento:
-- Se o usuario responder somente `EXECUTION`, executar imediatamente a etapa Coder com `task_path` e `spec_path` retornados.
-- Se o usuario responder somente `REVIEW`, executar imediatamente a etapa Reviewer com `task_path` e `spec_path` retornados.
-- Se o usuario responder somente `TEST`, executar imediatamente a etapa Tester com `task_path` e `spec_path` retornados.
+<rules>
+- Se o usuario responder somente `EXECUTION`, executar imediatamente a etapa Coder.
+- Se o usuario responder somente `REVIEW`, executar imediatamente a etapa Reviewer.
+- Se o usuario responder somente `TEST`, executar imediatamente a etapa Tester.
+</rules>
 
-Formato dos comandos:
-
-```md
+<code language="md">
 Atue como Coder Agent.
 Leia e siga: ai/07-prompts/execution-coder-prompt.md
+Project: <project_id>
 Task alvo: <task_path>
 Spec: <spec_path>
-```
+</code>
 
-```md
+<code language="md">
 Atue como Reviewer Agent.
 Leia e siga: ai/07-prompts/review-reviewer-prompt.md
+Project: <project_id>
 Task alvo: <task_path>
 Spec: <spec_path>
-```
+</code>
 
-```md
+<code language="md">
 Atue como Tester Agent.
 Leia e siga: ai/07-prompts/test-tester-prompt.md
+Project: <project_id>
 Task alvo: <task_path>
 Spec: <spec_path>
-```
+</code>

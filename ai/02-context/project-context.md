@@ -1,23 +1,7 @@
-# Project Context
+# Deprecated Context File
 
-## Projeto
-Nome do projeto: starter-android-compose-mvi
-Objetivo principal: servir como base escalável para features Android usando Kotlin e Compose.
-Domínio de negócio: agnóstico no bootstrap.
+Este arquivo foi substituido por:
+- `ai/02-context/projects/default/context-disclosure.md`
+- `ai/02-context/projects/<project_id>/context-disclosure.md`
 
-## Stack
-- Linguagem: Kotlin
-- Plataforma: Android
-- UI: Jetpack Compose
-- Design System: Material Design 3
-- Estado: MVI
-- ViewModel: AndroidX Lifecycle ViewModel
-- Navegação: Navigation Compose
-- Testes: JUnit + biblioteca de coroutines test + mocks opcionais
-- Build tools: Gradle Kotlin DSL
-
-## Qualidade esperada
-- Código previsível
-- Fácil leitura
-- Estrutura pronta para reuso
-- Testabilidade desde o início
+Use `ai/AGENTS.md` para roteamento de contexto por `project_id`.

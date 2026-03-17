@@ -8,7 +8,7 @@ Este diretorio organiza o guia SSD em partes menores para facilitar leitura, man
 2. [02 - Mapa de Pastas e Arquivos](./02-mapa-de-pastas-e-arquivos.md)
 3. [03 - Contratos por Etapa](./03-contratos-por-etapa.md)
 4. [04 - Politica de Skills e Escala](./04-politica-de-skills-e-escala.md)
-5. [05 - Onboarding: Board -> PRB/PRD -> Agents Flow](./05-onboarding-board-prd-plan.md)
+5. [05 - Onboarding: Board -> PRB/PRD -> Flow SSD (Role Skills)](./05-onboarding-board-prd-plan.md)
 6. [06 - Operacao Viva da Documentacao](./06-operacao-viva-da-documentacao.md)
 
 ## Como usar

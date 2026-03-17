@@ -1,6 +1,8 @@
 ---
 name: write-viewmodel-unit-tests
 description: Escreve testes unitários de ViewModel usando o baseline de coroutines e utilitários compartilhados do projeto.
+version: 1.1.0
+updated_at: 2026-03-17
 ---
 
 # Objetivo
@@ -19,3 +21,4 @@ Padronizar testes de `ViewModel` com foco em estado e intents.
 - Cobrir comportamento, não detalhes internos
 - Evitar mocks desnecessários
 - Reutilizar `core:testing`
+
